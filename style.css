@@ -1,0 +1,226 @@
+
+/* GLOBAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #f8f6ed;
+}
+
+/* HERO SECTION */
+header {
+    min-height: 100vh;
+    background: url("images/restaurant.jpg.png") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 25, 17, .85),
+        rgba(15, 25, 17, .35)
+    );
+}
+
+/* NAVBAR */
+ .navbar {
+     width: 100%;
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+     position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+} 
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: #d6b76a;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #d6b76a;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #d6b76a;
+    transition: .3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* MENU BUTTON */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #d6b76a;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 40px 20px;
+    max-width: 900px;
+    animation: fadeUp 1.2s ease;
+}
+
+.subtitle {
+    color: #d6b76a;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    font-size: 65px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, .4);
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #eee9dc;
+    margin-bottom: 35px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #e3c477, #b58b3d);
+    color: #263626;
+    text-decoration: none;
+    padding: 16px 38px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .4s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+}
+
+.hero-btn:hover {
+    transform: translateY(-5px);
+    background: #fff;
+    color: #34452f;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        right: 5%;
+        width: 210px;
+        padding: 25px;
+        background: #34452f;
+        gap: 22px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .hero-btn {
+        padding: 13px 25px;
+    }
+}
